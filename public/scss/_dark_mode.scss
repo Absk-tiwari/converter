@@ -1,0 +1,258 @@
+body.body_dark {
+  --brand_color: #3577f1 !important;
+  --bs-white: #2c303a !important;
+  --p_color: #c3c3c3 !important;
+  --black_900: #f8f8f8 !important;
+  --black_800: #f1f1f1 !important;
+  --black_700: #e1e1e1 !important;
+  --black_600: #bebebe !important;
+  --black_500: #b9b9b9 !important;
+  --black_400: #a2a2a2 !important;
+  --black_150: rgba(255, 255, 255, 0.3) !important;
+  --black_100: #d6d9dc !important;
+  --black_50: #494949 !important;
+  --black_25: #383838 !important;
+
+  --border_on_highlight: #393e4b !important;
+  --border_on_white: #2c303a !important;
+
+  --body_bg: #131417 !important;
+  color: #f6f6f6 !important;
+  color: $black_150;
+
+  .doc_features_item p,
+  .recommended_item ul li a,
+  .doc_title p
+   {
+    color: #c3c3c3;
+  }
+  .doc_community_item p {
+    color: var(--black_100);
+  }
+  .doc_community_area .shap_one {
+    display: none;
+  }
+  .doc_features_area .doc_features_shap {
+    display: none;
+  }
+  .navbar_fixed.menu_one {
+    background: #171544;
+    box-shadow: 0 0 15px 0 #000;
+  }
+  .doc_categories_guide_area .shap {
+    display: none;
+  }
+
+  .forum_footer_area,
+  .doc_footer_top {
+    background: #010101;
+  }
+
+  .nice-select .list {
+    background-color: #2c303a;
+    color: #e1e1e1;
+  }
+
+  .header_search_form .custom-select li {
+    color: var(--black_800);
+  }
+  .nice-select .option:hover,
+  .nice-select .option.focus,
+  .nice-select .option.selected.focus {
+    background: var(--black_750);
+  }
+  .ab_wd .nice_select ul li {
+    color: var(--p_color);
+  }
+  .header_search_form_info .custom-select ul li:hover,
+  .header_search_form_info .custom-select ul li.selected {
+    color: var(--black_500);
+  }
+
+  .doc_community_area,
+  .common_question_area,
+  .freelancing_list,
+  .asking_area {
+    background: #242729;
+  }
+
+  .body_wrapper,
+  .img_modal,
+  .forum-user-wrapper,
+  .blog_top_post,
+  .doc_features_area,
+  textarea#massage,
+  .video_slider_area {
+    background: #131417;
+  }
+  .custom-select.custom-select{
+    color: #C3C3C3;
+  }
+  .h_item p,
+  .main_title p {
+    color: #c8ccd0;
+  }
+
+  .community-post.style-two:hover,
+  .header_search_form .input-wrapper input {
+    background: #252830;
+  }
+
+  .w_tag_list.style-light li a,
+  .ticket_categories li .count,
+  .nice-select .list,
+  pre[class*="language-"]>code {
+    background: #2c303a;
+  }
+
+  .community-post.style-two:not(:last-child),
+  .bb-radius,
+  .post-header,
+  .community-post.style-two:hover,
+  .doc_footer_bottom,
+  .ticket_categories li:not(:last-child),
+  .single_list,
+  .comments_widget li .text,
+  .common_question_area .question_menu .topic_list_item,
+  .footer_copyright,
+  .pagination_inner .go_btn .input-group-append button,
+  .forum_l_inner .forum_head,
+  .r_heading,
+  .user_list_wd,
+  .navbar-nav li,
+  .comment_list .navbar-nav li,
+  .question_list_wd,
+  .forum_l_inner,
+  .forum_body .topic_list li {
+    border-color: #2c303a;
+  }
+
+  .navbar_fixed.menu_one .menu > .nav-item > .nav-link,
+  .breadcrumb .breadcrumb-item:last-child,
+  .doc_faq_info .card .card-header h2 button,
+  .bbp-login-form legend,
+  #new-post legend,
+  .bbp-logged-in h4 a,
+  .search-result-item .doc-item a,
+  .topics-filter .nav-item .nav-link.active,
+  .topics-filter .nav-item .nav-link:hover,
+  .learn_btn,
+  .question-icon,
+  .question_list .ques_item h4,
+  .bbp-login-form label,
+  #new-post label,
+  .dark_menu .menu > .nav-item > .nav-link,
+  .navbar_fixed.menu_one .search-icon,
+  .search-result-item .doc-article:hover a,
+  .cheatsheet_accordian .card .card-header button,
+  .forum_l_inner .forum_head .left li,
+  .pagination_inner .go_btn input,
+  .text_btn.dark_btn,
+  .topic-heading,
+  .doc_community_item .doc_entry_info .author_avatar li {
+    color: #fff;
+  }
+
+  .contact_info .contact_form .form-group .form-control {
+    background: #2c303a;
+}
+
+  .search-result-item .doc-item a,
+  .search-result-item .doc-section,
+  .search .searchbar-tabs,
+  #docy-search-result:before,
+  #docy-search-result,
+  .wp-editor-container,
+  .filter_form input,
+  // .contact_form .form-group .form-control,
+  // .contact_form .form-group textarea,
+  .topic_list_item,
+  .wp-block-archives select,
+  .wp-block-categories select,
+  .widget select,
+  .main-post,
+  .all-answers,
+  .bbp-reply-form,
+  .search-main,
+  #comments,
+  .blog_comment_box,
+  .bbp-login-form input[type="text"],
+  .bbp-login-form input[type="password"],
+  #new-post .bbp-the-content-wrapper textarea,
+  #new-post input[type="text"],
+  .post-header,
+  .community-post.style-two:not(:last-child) {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .navbar_fixed .header_logo img.sticky_logo {
+    display: none;
+  }
+  .navbar_fixed {
+    img.white_logo {
+      display: block;
+    }
+  }
+
+  .sticky_menu .menu_one {
+    background: #171544;
+  }
+
+  /*--===== Header Logo--=====*/
+  .header_logo img.main_logo.logo_light_version {
+    display: none;
+  }
+
+  .header_logo .white_logo.logo_dark_version {
+    display: block;
+  }
+}
+
+//==================== Dark mode Button===================//
+.js-darkmode-btn {
+  position: relative;
+  background: #1d2746;
+  color: gold;
+  border-radius: 50px;
+  padding: 0 5px;
+  margin-left: 15px;
+  height: 26px;
+}
+.js-darkmode-btn label {
+  margin: 0;
+  cursor: pointer;
+  &:hover {
+    color: gold;
+  }
+}
+.js-darkmode-btn .ball {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  background-color: #fafafa;
+  border-radius: 50%;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: default;
+  transition: all 0.3s linear 0s;
+}
+.js-darkmode-btn ion-icon {
+  color: gold;
+  font-size: 14px;
+}
+.js-darkmode-btn input {
+  display: none;
+}
+
+/**=== Footer Dark Logo ===**/
+body:not(.body_dark) img.logo-dark {
+  display: none;
+}
+
+body.body_dark img.logo-dark {
+  display: block;
+}
+
+body.body_dark img.logo-light {
+  display: none;
+}

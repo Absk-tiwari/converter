@@ -1,0 +1,109 @@
+/*font Variables*/
+$rob: "Roboto", sans-serif;
+$great: "Great Vibes", cursive;
+
+:root {
+
+  --brand_color: #4c4cf1;
+  --secondary_color: #1d2746;
+  --p_color: #425466;
+  --gradient_bg_color1: var(--gradient_bg_color-from, #fffbf2);
+  --gradient_bg_color2: var(--gradient_bg_color-to, #edfffd);
+  
+  --border_on_white: #e6edf0;
+  --border_on_highlight: #e6edf0;
+
+  --bs-white: #fff;
+  
+  --black_25: #f9f9f9;
+  --black_50: #ebebeb;
+  --black_100: #d6d9dc;
+  --black_150: #c8ccd0;
+  --black_200: #bbc0c4;
+  --black_300: #9fa6ad;
+  --black_350: #9199a1;
+  --black_400: #848d95;
+  --black_500: #6a737c;
+  --black_600: #535a60;
+  --black_700: #3c4146;
+  --black_750: #2f3337;
+  --black_800: #242729;
+  --black_900: #0c0d0e;
+  --bs_sm: 0 1px 2px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 2px 8px rgb(0 0 0 / 5%);
+  --bs_md: 0 1px 3px rgb(0 0 0 / 6%), 0 2px 6px rgb(0 0 0 / 6%), 0 3px 8px rgb(0 0 0 / 9%);
+  --bs_lg: 0 1px 4px rgb(0 0 0 / 9%), 0 3px 8px rgb(0 0 0 / 9%), 0 4px 13px rgb(0 0 0 / 13%);
+
+
+  --body_bg: #ffffff;
+
+}
+
+$h_title: var(--black_800);
+
+// $p_color: #6b707f;
+$p_color: var(--p_color);
+$black_25: var(--black_25);
+$black_50: var(--black_50);
+$black_100: var(--black_100);
+$black_150: var(--black_150);
+$black_200: var(--black_200);
+$black_300: var(--black_300);
+$black_350: var(--black_350);
+$black_400: var(--black_400);
+$black_500: var(--black_500);
+$black_600: var(--black_600);
+$black_700: var(--black_700);
+$black_750: var(--black_750);
+$black_800: var(--black_800);
+$black_900: var(--black_900);
+
+$body_bg: var(--bs-white);
+$bs_white: var(--bs-white);
+
+$brand_color : #4c4cf1;
+$baseColor2: #4c4cf1;
+$hover3: #c6e7f7;
+
+
+// Mixins
+@mixin transition(
+  $property: all,
+  $duration: 300ms,
+  $animate: linear,
+  $delay: 0s
+) {
+  transition: $property $duration $animate $delay;
+}
+
+/**=== Functions ===**/
+@function brand_color_rgba($alpha) {
+  @return rgba(76, 76, 241, $alpha);
+}
+
+// Placeholder Mixins
+
+@mixin placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+.col-md-offset-right-1,
+.col-lg-offset-right-1 {
+  margin-right: 8.33333333%;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+  font-family: "Roboto",sans-serif;
+  color: var(--black_800);
+  line-height: 1.3;
+}
