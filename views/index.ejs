@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="css/style-main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <style>
-
         tr > * {
             background-color: white!important;
         }
@@ -45,10 +44,9 @@
         .doc_banner_area {
             background: #537395;
         }
-
     </style>
 
-    <title>Docy</title>
+    <title> Love 2 converter </title>
 
 </head>
 
@@ -67,52 +65,7 @@
         </div>
     </div>
     <div class="body_wrapper">
-        <nav class="navbar navbar-expand-lg menu_one menu_purple sticky-nav">
-            <div class="container">
-                <a class="navbar-brand header_logo" href="index.html">
-                    <img class="first_logo sticky_logo" src="img/logo.png" srcset="img/logo-2x.png 2x" alt="logo">
-                    <img class="white_logo main_logo" src="img/logo-w.png" srcset="img/logo-w2x.png 2x" alt="logo">
-                </a>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="menu_toggle">
-                        <span class="hamburger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                        <span class="hamburger-cross">
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav menu ml-auto">
-                        <li class="nav-item dropdown submenu active">
-                            <a href="/" class="nav-link dropdown-toggle">Home</a>
-                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="false"
-                                data-toggle="dropdown"></i>
-                        </li>
-                        
-                    </ul>
-                    <div class="right-nav">
-                        <div class="px-2 js-darkmode-btn" title="Toggle dark mode">
-                            <label for="something" class="tab-btn tab-btns">
-                                <ion-icon name="moon"></ion-icon>
-                            </label>
-                            <label for="something" class="tab-btn">
-                                <ion-icon name="sunny"></ion-icon>
-                            </label>
-                            <label class=" ball" for="something"></label>
-                            <input type="checkbox" name="something" id="something" class="dark_mode_switcher">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <%- include('partials/header') %>
 
         <section class="doc_banner_area banner_creative1">
             <ul class="list-unstyled banner_shap_img">
@@ -183,79 +136,7 @@
 
         </section>
         
-        <footer class="doc_footer_area">
-            <div class="doc_footer_top bg-transparent">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="f_widget doc_about_widget wow fadeInUp" data-wow-delay="0.2s">
-                                <a href="#">
-                                    <img src="img/logo.png" class="logo-light" srcset="img/logo-2x.png 2x" alt="">
-                                    <img src="img/logo-w.png" class="logo-dark" srcset="img/logo-2x.png 2x" alt="">
-                                </a>
-                                <p>I’m available for commissions and collaborations, and i’m excited to hear from you
-                                    about
-                                    new projects.!!</p>
-                                <ul class="list-unstyled">
-                                    <li><a href="#"><i class="social_facebook"></i></a></li>
-                                    <li><a href="#"><i class="social_twitter"></i></a></li>
-                                    <li><a href="#"><i class="social_vimeo"></i></a></li>
-                                    <li><a href="#"><i class="social_linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-sm-6">
-                            <div class="f_widget doc_service_list_widget pl-30 wow fadeInUp" data-wow-delay="0.3s">
-                                <h3 class="f_title_two">Solutions</h3>
-                                <ul class="list-unstyled">
-                                    <li><a href="#"><img src="img/new/smile2.png" alt="">Help Docs</a></li>
-                                    <li><a href="#"><img src="img/new/doc2.png" alt="">Docbuzz</a></li>
-                                    <li><a href="#"><img src="img/new/house2.png" alt="">User Frontend</a></li>
-                                    <li><a href="#"><img src="img/new/bag2.png" alt="">Lightbox</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="f_widget doc_service_list_widget pl-100 wow fadeInUp" data-wow-delay="0.4s">
-                                <h3 class="f_title_two">Support</h3>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Help Desk</a></li>
-                                    <li><a href="#">Knowledge Base</a></li>
-                                    <li><a href="#">Live Chat</a></li>
-                                    <li><a href="#">Integrations</a></li>
-                                    <li><a href="#">Reports</a></li>
-                                    <li><a href="#">Messages</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="f_widget doc_service_list_widget pl-70 wow fadeInUp" data-wow-delay="0.5s">
-                                <h3 class="f_title_two">Company</h3>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Affiliates</a></li>
-                                    <li><a href="#">Partners</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="doc_footer_bottom">
-                <div class="container d-flex justify-content-between">
-                    <ul class="doc_footer_menu list-unstyled wow fadeInUp" data-wow-delay="0.2s">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Latest Projects</a></li>
-
-                    </ul>
-                    <p class="wow fadeInUp" data-wow-delay="0.3s">© 2023 All Rights Reserved Design by
-                        <span>Spider-themes</span>
-                    </p>
-                </div>
-            </div>
-        </footer>
+        <%- include('partials/footer') %>
     </div>
 
     <!-- Back to top button -->
@@ -318,11 +199,12 @@
 
             for (let index = 0; index < images.length; index++) {
                 const file = images[index];
+                const extension = file.name.split('.')[1];
                 var reader = new FileReader();
                 reader.readAsDataURL(file);
                 reader.onload = function() {
                     
-                    $('.doc_banner_content .table-rows').append(`<tr class="mt-2 w-100" data-index="${index}">\
+                    let html = `<tr class="mt-2 w-100" data-index="${index}">\
                         <td style="width:35%">
                             <b class="fs-14 mb-1 heighted">${wrapText(file.name, 40)}</b>\
                             <input type="hidden" name="names=[]" value="${file.name}">
@@ -336,35 +218,27 @@
                                     <span data-name="${file.name}">...</span>
                                     <ul class="dropdown-menu" id="navbarSupportedContent">
                                         <li class="dropdown-item buttons">
-                                            <div class="row">
-                                                <div class="card" data-index="${index}">
-                                                    <a class="btn text-white bg-dark" >JPEG</a>    
-                                                </div>
-                                                <div class="card" data-index="${index}">
-                                                    <a class="btn text-white bg-dark" >PNG</a>    
-                                                </div>
-                                                <div class="card" data-index="${index}">
-                                                    <a class="btn text-white bg-dark" >WEBP</a>    
-                                                </div>
-                                                <div class="card" data-index="${index}">
-                                                    <a class="btn text-white bg-dark" >AVIF</a>    
-                                                </div>
-                                                <div class="card" data-index="${index}">
-                                                    <a class="btn text-white bg-dark" >SVG</a>    
-                                                </div>
-                                                <div class="card" data-index="${index}">
-                                                    <a class="btn text-white bg-dark" >ICO</a>    
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                            <div class="row">`;
+
+                    for (const ext of ['jpg','png','webp','avif','tiff','svg']) {
+                        if(ext!== extension) {
+                            html += `<div class="card" data-index="${index}">
+                                <a class="btn text-white bg-dark" >${ext.toUpperCase()}</a>
+                            </div>`;
+                        }
+                    }
+                                        
+                    html += `</div></li>
+                                </ul>
                             </div>
                         </td>
                         <td style="width:25%" class="action-${index}"></td>
                         <td style="width:15%">
                             <i class="icon_close text-danger" onclick="removeSpecificFile(${index})" style="font-size:1.8rem;cursor:pointer"></i>
                         </td>
-                    </tr>`);
+                    </tr>`;
+                    console.log(html)
+                    $('.doc_banner_content .table-rows').append(html);
 
                     $('.buttons .card').on('click', function(e){
                         $('tr[data-index="'+ this.dataset.index +'"] td .dropdown-toggle span').text(this.innerText);
@@ -417,7 +291,7 @@
                 meta[span.dataset.name]=span.innerText;
             });
 
-            const route= document.querySelector('input[name="images"]').files.length > 1? "convert-multiple":"convert";
+            const route = images.length > 1? "convert-multiple":"bg/remove";
             fd.append('_meta', JSON.stringify(meta));
             // fd.append('images', images)
             images.forEach(f=> fd.append('images',f ));

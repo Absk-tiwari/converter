@@ -53,14 +53,19 @@ router.post('/convert-multiple', upload.array('images', 20), async (req, res) =>
   zip.pipe(res);
 
   try {
+    const sharpFormats = ['tiff','png','jpg','webp','avif','svg'];
     for (const file of req.files) {
 
         const inputPath = file.path;
-        const format = _meta[file.originalname].toLowerCase();
-        const convertedBuffer = await sharp(inputPath).toFormat(format).toBuffer();
-        const baseName = path.basename(file.originalname, path.extname(file.originalname));
+        const tformat = _meta[file.originalname].toLowerCase();
 
-        zip.append(convertedBuffer, { name: `${baseName}-converted.${format}` });
+        let convertedBuffer, baseName;
+        if(sharpFormats.includes(tformat)) {
+            convertedBuffer = await sharp(inputPath).toFormat(tformat).toBuffer();
+            baseName = path.basename(file.originalname, path.extname(file.originalname));
+        }
+
+        zip.append(convertedBuffer, { name: `${baseName}-converted.${tformat}` });
         fs.unlink(file.path, () => {});      // clean temp upload
 
     }
@@ -72,30 +77,70 @@ router.post('/convert-multiple', upload.array('images', 20), async (req, res) =>
 });
 
 /* ------------------------------------------------------------------ */
-/*  2. SINGLE → WEBP BLOB                                             */
-/*      POST /convert/single     field: image                          */
+/*  2. SINGLE → BLOB                                                  */
+/*      POST /convert/single     field: image                         */
 /* ------------------------------------------------------------------ */
 
-router.post('/convert/single', upload.single('image'), async (req, res) => {
+router.post('/convert', upload.single('images'), async (req, res) => {
+
   if (!req.file) {
     return res.status(400).json({ error: 'No file received' });
   }
 
   try {
-    const webpBuffer = await sharp(req.file.path).webp({ quality: 90 }).toBuffer();
-    fs.unlink(req.file.path, () => {});    // clean temp upload
+    const _meta = JSON.parse(req.body._meta);
+    // const webpBuffer = await sharp(req.file.path).webp({ quality: 90 }).toBuffer();
+    const tformat = _meta[req.file.originalname].toLowerCase();
+    const sharpFormats = ['tiff','png','jpg','webp','avif'];
+    let buffer;
+    if(sharpFormats.includes(tformat)) {
+        buffer = await sharp(req.file.path).toFormat(tformat).toBuffer();
+        fs.unlink(req.file.path, () => {});    // clean temp upload
+    } else {
+        // unsupported-ones here for other modules
+        if(tformat==='svg') {
 
+            const filePath = req.file.path;
+            const processedPath = `${filePath}.png`;
+            try {
+                // (Optional) Resize / normalize the image
+                await sharp(filePath).resize(300).png().toFile(processedPath);
+                // Convert to SVG using Potrace
+                potrace.trace(processedPath, { threshold: 180 }, (err, svg) => {
+                    fs.unlink(filePath, () => {});
+                    fs.unlink(processedPath, () => {});
+                    if (err) {
+                        console.error("Trace error:", err);
+                        return res.status(500).send('Conversion failed');
+                    }
+                    const svgBuffer = Buffer.from(svg, 'utf-8');
+                    res.setHeader('Content-Type', 'image/svg+xml');
+                    res.send(svgBuffer); // ✅ Return SVG directly
+                });
+
+            } catch (error) {
+                console.error("Error:", error);
+                fs.unlink(filePath, () => {});
+                res.status(500).send('Something went wrong');
+            }
+        }
+
+    }
     res.set({
       'Content-Type'       : 'image/webp',
-      'Content-Disposition': 'inline; filename="converted.webp"'
+      'Content-Disposition': `inline;filename="converted-${req.file.originalname}.${tformat}"`
     });
-    res.end(webpBuffer);                   // sends blob to client
+    res.end(buffer);
+
   } catch (err) {
     console.error('Single conversion error:', err);
     res.status(500).end();
   }
 });
 
+router.get('/terms-and-privacy', async(req,res) => {
+    res.render("terms-and-privacy");
+})
 /* ------------------------------------------------------------------ */
 /*  EXPORT ROUTER                                                     */
 /* ------------------------------------------------------------------ */
